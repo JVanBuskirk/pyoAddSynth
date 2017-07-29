@@ -9,7 +9,7 @@
 namespace BinaryData
 {
     extern const char*   pyoAddSynth_py;
-    const int            pyoAddSynth_pySize = 1762;
+    const int            pyoAddSynth_pySize = 1814;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

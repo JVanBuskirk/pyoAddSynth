@@ -25,9 +25,9 @@
 		2A77A11D258B42B8D0DEE23D = {isa = PBXBuildFile; fileRef = 29B1F01F6C256AB762F32B9C; };
 		E1F10E6609F080FB0529F2C5 = {isa = PBXBuildFile; fileRef = B91816B79EA07AB5A79C35E5; };
 		3C8FAE51F75CEF9E726094C0 = {isa = PBXBuildFile; fileRef = 8F61BBDDD9ACC9D611320D46; };
-		FD7F52D1EE532574F215F0A7 = {isa = PBXBuildFile; fileRef = CDF1187091F5BC8275B94C29; };
 		7F5A2C4C6A47E100E33E101A = {isa = PBXBuildFile; fileRef = 9ACC33984FE9CD7E442A7F37; };
 		37A1C9FEEE68C3FF786D91B1 = {isa = PBXBuildFile; fileRef = BDA77701E700CA4A10F7BEC6; };
+		D3E4B9395281610AF708DDD3 = {isa = PBXBuildFile; fileRef = B6507F37D453C0FDB8981875; };
 		6B7D134EE02AB621F5C9C710 = {isa = PBXBuildFile; fileRef = A89C8AC24D36F93D4FD64C47; };
 		780BE8B84986639BFE6F1502 = {isa = PBXBuildFile; fileRef = 4729803A24C5F34BB6AC48EA; };
 		AEE0A897CD6D8F5532B46989 = {isa = PBXBuildFile; fileRef = 0E1504FDB4F847ADD37E2FF0; };
@@ -65,7 +65,6 @@
 		30735DE93CB96CD4CA610B6F = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_formats"; path = "/Applications/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
 		307CFA39EA61FD1D128274DD = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_video"; path = "/Applications/JUCE/modules/juce_video"; sourceTree = "<absolute>"; };
 		366C51E24567BA238FA0A36D = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecording.framework; path = System/Library/Frameworks/DiscRecording.framework; sourceTree = SDKROOT; };
-		37945C7D353B7A3BFCA949AE = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PyoClass.h; path = ../../Source/PyoClass.h; sourceTree = "SOURCE_ROOT"; };
 		37F16015A8EF0A126270CB67 = {isa = PBXFileReference; lastKnownFileType = file.py; name = pyoAddSynth.py; path = ../../Source/pyoAddSynth.py; sourceTree = "SOURCE_ROOT"; };
 		3C4E48B69A24E84DDA42515C = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_opengl"; path = "/Applications/JUCE/modules/juce_opengl"; sourceTree = "<absolute>"; };
 		4729803A24C5F34BB6AC48EA = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_basics.mm"; path = "../../JuceLibraryCode/include_juce_audio_basics.mm"; sourceTree = "SOURCE_ROOT"; };
@@ -76,6 +75,7 @@
 		538B649BEB0F709E4C2071CF = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_cryptography.mm"; path = "../../JuceLibraryCode/include_juce_cryptography.mm"; sourceTree = "SOURCE_ROOT"; };
 		548052DC080CF543AC039C30 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		56F2914E2F6F0E210BBA8B8C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = "SOURCE_ROOT"; };
+		5736E474FE97239E0451996E = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "m_pyo.h"; path = "../../../../My pyo/pyo-master/embedded/m_pyo.h"; sourceTree = "SOURCE_ROOT"; };
 		59A349D0F6821F09992DC3B1 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pyoAddSynth.component; sourceTree = "BUILT_PRODUCTS_DIR"; };
 		601844DAB92A4E19F6893547 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_graphics.mm"; path = "../../JuceLibraryCode/include_juce_graphics.mm"; sourceTree = "SOURCE_ROOT"; };
 		60C7FC24C1F3B5ED078B5376 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_data_structures"; path = "/Applications/JUCE/modules/juce_data_structures"; sourceTree = "<absolute>"; };
@@ -90,7 +90,6 @@
 		8FB52F7319FE2716ED8F3B50 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_gui_basics"; path = "/Applications/JUCE/modules/juce_gui_basics"; sourceTree = "<absolute>"; };
 		90463F42D6FB7D9B464FB157 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "include_juce_audio_plugin_client_utils.cpp"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp"; sourceTree = "SOURCE_ROOT"; };
 		91D6C7E6D7D029C15DF692D3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_opengl.mm"; path = "../../JuceLibraryCode/include_juce_opengl.mm"; sourceTree = "SOURCE_ROOT"; };
-		92B3DCC3272C38632D7EF7A4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "m_pyo.h"; path = "../../Source/m_pyo.h"; sourceTree = "SOURCE_ROOT"; };
 		9ACC33984FE9CD7E442A7F37 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginProcessor.cpp; path = ../../Source/PluginProcessor.cpp; sourceTree = "SOURCE_ROOT"; };
 		9B4E3FD205541A505DF64F06 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AU.plist"; path = "Info-AU.plist"; sourceTree = "SOURCE_ROOT"; };
 		9BFEA40B9EE7839BBB83CEC7 = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpyoAddSynth.a; sourceTree = "BUILT_PRODUCTS_DIR"; };
@@ -98,6 +97,7 @@
 		A89C8AC24D36F93D4FD64C47 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = "SOURCE_ROOT"; };
 		AE1CBF5A23D9C40C3119C5DC = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_utils"; path = "/Applications/JUCE/modules/juce_audio_utils"; sourceTree = "<absolute>"; };
 		B002A5FCD0388B9DCC63412A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = "SOURCE_ROOT"; };
+		B6507F37D453C0FDB8981875 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PyoClass.cpp; path = "../../../../My pyo/pyo-master/embedded/juceplugin/PyoClass.cpp"; sourceTree = "SOURCE_ROOT"; };
 		B73D85ED3ADEC0054C1BDC14 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_events"; path = "/Applications/JUCE/modules/juce_events"; sourceTree = "<absolute>"; };
 		B8F6A36BDC07079376A679A6 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		B91816B79EA07AB5A79C35E5 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -107,7 +107,7 @@
 		BFCEC2F21E9EDCEF21F33A71 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_gui_extra.mm"; path = "../../JuceLibraryCode/include_juce_gui_extra.mm"; sourceTree = "SOURCE_ROOT"; };
 		C0954504AA7C90A90CADA91C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = ../../JuceLibraryCode/AppConfig.h; sourceTree = "SOURCE_ROOT"; };
 		C330AE9A0A6A6B05A7332C52 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		CDF1187091F5BC8275B94C29 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PyoClass.cpp; path = ../../Source/PyoClass.cpp; sourceTree = "SOURCE_ROOT"; };
+		E20C0DDB9C2EAE097F541AF8 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PyoClass.h; path = "../../../../My pyo/pyo-master/embedded/juceplugin/PyoClass.h"; sourceTree = "SOURCE_ROOT"; };
 		E329D79CD4C062DC5FB73EEB = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_video.mm"; path = "../../JuceLibraryCode/include_juce_video.mm"; sourceTree = "SOURCE_ROOT"; };
 		E92612839C573203760ECD33 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_utils.mm"; path = "../../JuceLibraryCode/include_juce_audio_utils.mm"; sourceTree = "SOURCE_ROOT"; };
 		EB1A6E1F36E97B30CF6B61E5 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -116,14 +116,14 @@
 		FDAA3FE1D8B164279DC9C89D = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FEE69C36DC903BB990F2B5FB = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_plugin_client_VST_utils.mm"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm"; sourceTree = "SOURCE_ROOT"; };
 		A470CF7CC7E6A21B5D3FB56A = {isa = PBXGroup; children = (
-					CDF1187091F5BC8275B94C29,
-					37945C7D353B7A3BFCA949AE,
-					92B3DCC3272C38632D7EF7A4,
 					37F16015A8EF0A126270CB67,
 					9ACC33984FE9CD7E442A7F37,
 					B002A5FCD0388B9DCC63412A,
 					BDA77701E700CA4A10F7BEC6,
-					8493DB4A09C4E6939010DE2F, ); name = Source; sourceTree = "<group>"; };
+					8493DB4A09C4E6939010DE2F,
+					5736E474FE97239E0451996E,
+					B6507F37D453C0FDB8981875,
+					E20C0DDB9C2EAE097F541AF8, ); name = Source; sourceTree = "<group>"; };
 		F189F2FFA1795F65A7F61284 = {isa = PBXGroup; children = (
 					A470CF7CC7E6A21B5D3FB56A, ); name = pyoAddSynth; sourceTree = "<group>"; };
 		27CC33F7E26BD8F6A1603B50 = {isa = PBXGroup; children = (
@@ -473,9 +473,9 @@
 					2385FED55EE82B14BCE7A649,
 					07C853A0BD901361A1D575CD, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		12C33DD7D7E63928C1E785E6 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-					FD7F52D1EE532574F215F0A7,
 					7F5A2C4C6A47E100E33E101A,
 					37A1C9FEEE68C3FF786D91B1,
+					D3E4B9395281610AF708DDD3,
 					6B7D134EE02AB621F5C9C710,
 					780BE8B84986639BFE6F1502,
 					AEE0A897CD6D8F5532B46989,

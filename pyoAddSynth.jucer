@@ -13,9 +13,6 @@
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.1.0">
   <MAINGROUP id="n8PWar" name="pyoAddSynth">
     <GROUP id="{017F20CF-9524-1162-3404-71046BDED7A5}" name="Source">
-      <FILE id="U4DrOS" name="PyoClass.cpp" compile="1" resource="0" file="Source/PyoClass.cpp"/>
-      <FILE id="Pv7wXM" name="PyoClass.h" compile="0" resource="0" file="Source/PyoClass.h"/>
-      <FILE id="v3y9RF" name="m_pyo.h" compile="0" resource="0" file="Source/m_pyo.h"/>
       <FILE id="h0TYsE" name="pyoAddSynth.py" compile="0" resource="1" file="Source/pyoAddSynth.py"/>
       <FILE id="RVMIVe" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -24,6 +21,9 @@
       <FILE id="SMr1xb" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="VnLtL5" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="EtEkbI" name="m_pyo.h" compile="0" resource="0" file="../../My pyo/pyo-master/embedded/m_pyo.h"/>
+      <FILE id="CmUHfj" name="PyoClass.cpp" compile="1" resource="0" file="../../My pyo/pyo-master/embedded/juceplugin/PyoClass.cpp"/>
+      <FILE id="gEw5MT" name="PyoClass.h" compile="0" resource="0" file="../../My pyo/pyo-master/embedded/juceplugin/PyoClass.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

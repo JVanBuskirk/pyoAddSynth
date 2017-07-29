@@ -26,30 +26,30 @@ PyoAddSynthAudioProcessor::PyoAddSynthAudioProcessor():
 #endif
     parameters (*this, nullptr)
 {
-    parameters.createAndAddParameter ("harm1",       // parameterID
-                                      "1st Harmonic",       // parameter name
+    parameters.createAndAddParameter ("harm2",       // parameterID
+                                      "2nd Harmonic",       // parameter name
                                       String(),     // parameter label (suffix)
                                       NormalisableRange<float> (1.0f, 10.0f),    // range
                                       2.0f,         // default value
                                       nullptr,
                                       nullptr);
-                                      
-    parameters.createAndAddParameter ("harm2",       // parameterID
-                                      "2nd Harmonic",       // parameter name
+
+    parameters.createAndAddParameter ("harm3",       // parameterID
+                                      "3rd Harmonic",       // parameter name
                                       String(),     // parameter label (suffix)
                                       NormalisableRange<float> (1.0f, 10.0f),    // range
                                       3.0f,         // default value
                                       nullptr,
                                       nullptr);
-                                      
-    parameters.createAndAddParameter ("harm3",       // parameterID
-                                      "3rd Harmonic",       // parameter name
+
+    parameters.createAndAddParameter ("harm4",       // parameterID
+                                      "4th Harmonic",       // parameter name
                                       String(),     // parameter label (suffix)
                                       NormalisableRange<float> (1.0f, 10.0f),    // range
                                       4.0f,         // default value
                                       nullptr,
                                       nullptr);
-                                      
+
     parameters.createAndAddParameter ("attack",       // parameterID
                                       "Attack",       // parameter name
                                       String(),     // parameter label (suffix)
@@ -57,7 +57,7 @@ PyoAddSynthAudioProcessor::PyoAddSynthAudioProcessor():
                                       0.005f,         // default value
                                       nullptr,
                                       nullptr);
-    
+
     parameters.createAndAddParameter ("decay",       // parameterID
                                       "Decay",       // parameter name
                                       String(),     // parameter label (suffix)
@@ -65,7 +65,7 @@ PyoAddSynthAudioProcessor::PyoAddSynthAudioProcessor():
                                       0.2f,         // default value
                                       nullptr,
                                       nullptr);
-    
+
     parameters.createAndAddParameter ("sustain",       // parameterID
                                       "Sustain",       // parameter name
                                       String(),     // parameter label (suffix)
@@ -73,7 +73,7 @@ PyoAddSynthAudioProcessor::PyoAddSynthAudioProcessor():
                                       0.4f,         // default value
                                       nullptr,
                                       nullptr);
-                                      
+
     parameters.createAndAddParameter ("release",       // parameterID
                                       "Release",       // parameter name
                                       String(),     // parameter label (suffix)
@@ -81,7 +81,7 @@ PyoAddSynthAudioProcessor::PyoAddSynthAudioProcessor():
                                       0.5f,         // default value
                                       nullptr,
                                       nullptr);
-                                      
+
     parameters.state = ValueTree (Identifier ("APVTSAddSynth"));
 }
 
@@ -148,11 +148,11 @@ void PyoAddSynthAudioProcessor::prepareToPlay (double sampleRate, int samplesPer
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
     keyboardState.reset();
-    
+
     pyo.setup(getTotalNumOutputChannels(), samplesPerBlock, sampleRate);
     pyo.exec(BinaryData::pyoAddSynth_py);
-    
-    
+
+
 }
 
 void PyoAddSynthAudioProcessor::releaseResources()
@@ -192,12 +192,12 @@ void PyoAddSynthAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuf
     String decay (*parameters.getRawParameterValue ("decay"));
     String sustain (*parameters.getRawParameterValue ("sustain"));
     String release (*parameters.getRawParameterValue ("release"));
-    
-    
+
+
     const int numSamples = buffer.getNumSamples();
-    
+
     keyboardState.processNextMidiBuffer (midiMessages, 0, numSamples, true);
-    
+
     MidiMessage m;
     int time;
     //pyo.midi(status, data 1, data 2)
@@ -205,7 +205,7 @@ void PyoAddSynthAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuf
     {
         if (m.isNoteOn())
         {
-            pyo.midi(143+m.getChannel(), m.getNoteNumber(), m.getVelocity());   
+            pyo.midi(143+m.getChannel(), m.getNoteNumber(), m.getVelocity());
         }
         else if (m.isNoteOff())
         {
@@ -222,15 +222,15 @@ void PyoAddSynthAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuf
         {
         }
     }
-    
-    pyo.value("harm1", *parameters.getRawParameterValue ("harm1"));
+
     pyo.value("harm2", *parameters.getRawParameterValue ("harm2"));
     pyo.value("harm3", *parameters.getRawParameterValue ("harm3"));
+    pyo.value("harm4", *parameters.getRawParameterValue ("harm4"));
     pyo.exec("synth.envAttack("+attack+")");
     pyo.exec("synth.envDecay("+decay+")");
     pyo.exec("synth.envSustain("+sustain+")");
     pyo.exec("synth.envRelease("+release+")");
-    
+
     pyo.process(buffer);
 }
 

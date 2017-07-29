@@ -22,7 +22,7 @@ class PyoAddSynthAudioProcessorEditor  : public AudioProcessorEditor
 public:
 
     typedef AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
-    
+
     PyoAddSynthAudioProcessorEditor (PyoAddSynthAudioProcessor&, AudioProcessorValueTreeState&);
     ~PyoAddSynthAudioProcessorEditor();
 
@@ -32,34 +32,34 @@ public:
 
 private:
     AudioProcessorValueTreeState& valueTreeState;
-    
-    Label harm1Label;
+
     Label harm2Label;
     Label harm3Label;
-    
+    Label harm4Label;
+
     Label attackLabel;
     Label decayLabel;
     Label sustainLabel;
     Label releaseLabel;
-    
-    Slider harm1Slider;
+
     Slider harm2Slider;
     Slider harm3Slider;
-    
+    Slider harm4Slider;
+
     Slider attackSlider;
     Slider decaySlider;
     Slider sustainSlider;
     Slider releaseSlider;
-    
-    ScopedPointer<SliderAttachment> harm1Attachment;
+
     ScopedPointer<SliderAttachment> harm2Attachment;
     ScopedPointer<SliderAttachment> harm3Attachment;
-    
+    ScopedPointer<SliderAttachment> harm4Attachment;
+
     ScopedPointer<SliderAttachment> attackAttachment;
     ScopedPointer<SliderAttachment> decayAttachment;
     ScopedPointer<SliderAttachment> sustainAttachment;
     ScopedPointer<SliderAttachment> releaseAttachment;
-    
+
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     PyoAddSynthAudioProcessor& processor;
