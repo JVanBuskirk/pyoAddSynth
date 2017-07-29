@@ -21,9 +21,9 @@
       <FILE id="SMr1xb" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="VnLtL5" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
-      <FILE id="EtEkbI" name="m_pyo.h" compile="0" resource="0" file="../../My pyo/pyo-master/embedded/m_pyo.h"/>
-      <FILE id="CmUHfj" name="PyoClass.cpp" compile="1" resource="0" file="../../My pyo/pyo-master/embedded/juceplugin/PyoClass.cpp"/>
-      <FILE id="gEw5MT" name="PyoClass.h" compile="0" resource="0" file="../../My pyo/pyo-master/embedded/juceplugin/PyoClass.h"/>
+      <FILE id="ELi6hq" name="m_pyo.h" compile="0" resource="0" file="Source/m_pyo.h"/>
+      <FILE id="NKqL3l" name="PyoClass.cpp" compile="1" resource="0" file="Source/PyoClass.cpp"/>
+      <FILE id="zUFYme" name="PyoClass.h" compile="0" resource="0" file="Source/PyoClass.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
