@@ -2,7 +2,7 @@
 Additive Synth using Juce and Pyo
 
 
-Audio Units build and work well in some hosts. VST plugins will build, but will not load into any host. I am a novice C++ programmer which probably explains the known issues.
+Audio Units build and work well in some hosts.
 
 You must have Pyo installed to run the plug-in. http://ajaxsoundstudio.com/software/pyo/
 
@@ -20,16 +20,3 @@ Redwood Audio's Tutorial
 
 http://www.redwoodaudio.net/Tutorials/juce_for_vst_development__intro3.html
 
-Known Issues
-
-OSX
-
-- Audio Units will build and load into Reaper, Logic, Ardour5 but fail to load into Max, Juce Plugin Host, and Tracktion.
-- VST will build but fails to load into any host
-
-Build Instructions
-- Install Pyo (www.ajaxsoundstudio.com/software/pyo/)
-- Install Juce (www.juce.com)
-- Include m_pyo.h, PyoClass.cpp, and PyoClass.h from the Pyo source code (https://github.com/JVanBuskirk/pyo/tree/master/embedded)
-- Check the Python compiler and linker flags in the xcode setup.
-- Check the OSX SDK Version and Architecture
