@@ -10,7 +10,8 @@
               pluginChannelConfigs="" pluginIsSynth="1" pluginWantsMidiIn="1"
               pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="pyoAddSynthAU" pluginRTASCategory="" aaxIdentifier="com.yourcompany.pyoAddSynth"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.1.0">
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.2.0"
+              companyCopyright="">
   <MAINGROUP id="n8PWar" name="pyoAddSynth">
     <GROUP id="{017F20CF-9524-1162-3404-71046BDED7A5}" name="Source">
       <FILE id="h0TYsE" name="pyoAddSynth.py" compile="0" resource="1" file="Source/pyoAddSynth.py"/>
@@ -27,13 +28,16 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" extraCompilerFlags="-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7"
-               extraLinkerFlags="-L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7">
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraCompilerFlags="-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -fno-strict-aliasing -fno-common -dynamic -arch i386 -arch x86_64 -g -DNDEBUG -g -fwrapv -O3 -Wall "
+               extraLinkerFlags="-L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7 -ldl -framework CoreFoundation"
+               extraFrameworks="Python" vst3Folder="">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="0" optimisation="1" targetName="pyoAddSynth"
-                       osxSDK="10.10 SDK" osxCompatibility="10.10 SDK" osxArchitecture="32BitUniversal"/>
+                       osxSDK="10.12 SDK" osxCompatibility="10.12 SDK" osxArchitecture="32BitUniversal"
+                       enablePluginBinaryCopyStep="1"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="pyoAddSynth"
-                       osxSDK="10.10 SDK" osxCompatibility="10.10 SDK" osxArchitecture="32BitUniversal"/>
+                       osxSDK="10.12 SDK" osxCompatibility="10.12 SDK" osxArchitecture="32BitUniversal"
+                       enablePluginBinaryCopyStep="1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../../../../../Applications/JUCE/modules"/>

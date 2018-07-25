@@ -22,6 +22,7 @@
 		6C945E02EF72F2AF6DBB2754 = {isa = PBXBuildFile; fileRef = 366C51E24567BA238FA0A36D; };
 		233156CEEC014425E27281FF = {isa = PBXBuildFile; fileRef = BAA6324EA7EFAFDD481B2B76; };
 		17E60703C82E9E857B49AAB1 = {isa = PBXBuildFile; fileRef = 7739B3EE36DE94614F5A70A0; };
+		F7946BDC9E3175F849FFF3C2 = {isa = PBXBuildFile; fileRef = AEDC119B61936935E103341E; };
 		2A77A11D258B42B8D0DEE23D = {isa = PBXBuildFile; fileRef = 29B1F01F6C256AB762F32B9C; };
 		E1F10E6609F080FB0529F2C5 = {isa = PBXBuildFile; fileRef = B91816B79EA07AB5A79C35E5; };
 		3C8FAE51F75CEF9E726094C0 = {isa = PBXBuildFile; fileRef = 8F61BBDDD9ACC9D611320D46; };
@@ -97,6 +98,7 @@
 		9D014E56C817A6C8CB6CD9CB = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		A89C8AC24D36F93D4FD64C47 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = "SOURCE_ROOT"; };
 		AE1CBF5A23D9C40C3119C5DC = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_utils"; path = "/Applications/JUCE/modules/juce_audio_utils"; sourceTree = "<absolute>"; };
+		AEDC119B61936935E103341E = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 		B002A5FCD0388B9DCC63412A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = "SOURCE_ROOT"; };
 		B73D85ED3ADEC0054C1BDC14 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_events"; path = "/Applications/JUCE/modules/juce_events"; sourceTree = "<absolute>"; };
 		B8F6A36BDC07079376A679A6 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
@@ -184,6 +186,7 @@
 					366C51E24567BA238FA0A36D,
 					BAA6324EA7EFAFDD481B2B76,
 					7739B3EE36DE94614F5A70A0,
+					AEDC119B61936935E103341E,
 					29B1F01F6C256AB762F32B9C,
 					B91816B79EA07AB5A79C35E5, ); name = Frameworks; sourceTree = "<group>"; };
 		718662908DF97AE7DF85B33C = {isa = PBXGroup; children = (
@@ -197,8 +200,12 @@
 					9B9FCEF27B1B9C51315E2955,
 					BDA1DF94567448B865BDF232,
 					718662908DF97AE7DF85B33C, ); name = Source; sourceTree = "<group>"; };
-		4A8787995CCC575B0070103F = {isa = XCBuildConfiguration; buildSettings = {  }; name = Debug; };
-		E2EA3216A45039D642FB8D00 = {isa = XCBuildConfiguration; buildSettings = {  }; name = Release; };
+		4A8787995CCC575B0070103F = {isa = XCBuildConfiguration; buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx10.12; }; name = Debug; };
+		E2EA3216A45039D642FB8D00 = {isa = XCBuildConfiguration; buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx10.12; }; name = Release; };
 		B6534C7C952591EE410F3614 = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
@@ -231,13 +238,13 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7";
-				OTHER_LDFLAGS = "-bundle -lpyoAddSynth -L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7";
+				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -fno-strict-aliasing -fno-common -dynamic -arch i386 -arch x86_64 -g -DNDEBUG -g -fwrapv -O3 -Wall";
+				OTHER_LDFLAGS = "-bundle -lpyoAddSynth -L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7 -ldl -framework CoreFoundation";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.pyoAddSynth;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = component; }; name = Debug; };
@@ -273,13 +280,13 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7";
-				OTHER_LDFLAGS = "-bundle -lpyoAddSynth -L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7";
+				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -fno-strict-aliasing -fno-common -dynamic -arch i386 -arch x86_64 -g -DNDEBUG -g -fwrapv -O3 -Wall";
+				OTHER_LDFLAGS = "-bundle -lpyoAddSynth -L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7 -ldl -framework CoreFoundation";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.pyoAddSynth;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = component; }; name = Release; };
@@ -310,12 +317,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = ("../../JuceLibraryCode", "/Applications/JUCE/modules", "/Applications/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7";
-				OTHER_LDFLAGS = "-L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7";
+				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -fno-strict-aliasing -fno-common -dynamic -arch i386 -arch x86_64 -g -DNDEBUG -g -fwrapv -O3 -Wall";
+				OTHER_LDFLAGS = "-L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7 -ldl -framework CoreFoundation";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.pyoAddSynth;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO; }; name = Debug; };
 		07C853A0BD901361A1D575CD = {isa = XCBuildConfiguration; buildSettings = {
@@ -345,12 +352,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = ("../../JuceLibraryCode", "/Applications/JUCE/modules", "/Applications/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7";
-				OTHER_LDFLAGS = "-L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7";
+				OTHER_CPLUSPLUSFLAGS = "-I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -fno-strict-aliasing -fno-common -dynamic -arch i386 -arch x86_64 -g -DNDEBUG -g -fwrapv -O3 -Wall";
+				OTHER_LDFLAGS = "-L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config -lpython2.7 -ldl -framework CoreFoundation";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.pyoAddSynth;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO; }; name = Release; };
 		8B06A0062F818DCF328C810E = {isa = XCBuildConfiguration; buildSettings = {
@@ -461,6 +468,7 @@
 					6C945E02EF72F2AF6DBB2754,
 					233156CEEC014425E27281FF,
 					17E60703C82E9E857B49AAB1,
+					F7946BDC9E3175F849FFF3C2,
 					2A77A11D258B42B8D0DEE23D,
 					E1F10E6609F080FB0529F2C5, ); runOnlyForDeploymentPostprocessing = 0; };
 		DFA33710771DB24C3ED4A88C = {isa = PBXNativeTarget; buildConfigurationList = 426D9038BC9CAE5AF6D4EAFF; buildPhases = (
